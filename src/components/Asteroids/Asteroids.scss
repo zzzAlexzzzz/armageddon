@@ -1,0 +1,106 @@
+.content__list__asteroids {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  h2 {
+    color: var(--white-base, #fff);
+    font-family: Helvetica;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  .content__asteroid {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+
+    .asteroid__distance {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+
+      .asteroid__distance-km {
+        color: #fff;
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
+  }
+  .asteroid-img {
+    display: flex;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .asteroid__dimensions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h3 {
+      color: var(--white-base, #fff);
+      font-family: Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      text-decoration-line: underline;
+    }
+
+    h4 {
+      color: var(--white-base, #fff);
+      font-family: Helvetica;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+  .asteroid__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+
+    .asteroid-cart {
+      display: flex;
+      padding: 2px 11px;
+      align-items: center;
+      gap: 2px;
+      border-radius: 16px;
+      background: var(--orange-smooth, rgba(248, 102, 0, 0.15));
+
+      h2 {
+        color: var(--orange-base, #f86600);
+        font-family: Helvetica;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .dangerous {
+    color: var(--gray-30, #e3e5e5);
+    font-family: Helvetica;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}

@@ -1,0 +1,93 @@
+.planeta_zemlia {
+  width: 536px;
+  height: 620px;
+  flex-shrink: 0;
+  float: left;
+}
+
+.content__list {
+  display: flex;
+  width: 402px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  float: left;
+}
+
+.content__top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.content__top h1 {
+  color: var(--white-base, #fff);
+  font-family: Helvetica;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.content__distance {
+  display: flex;
+}
+
+.content__distance-km {
+  color: var(--white-base, #fff);
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+.content__delimiter {
+  color: var(--white-base, #fff);
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.content__distance-moon {
+  color: var(--white-base, #fff);
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .planeta_zemlia {
+    width: 100%;
+    height: 620px;
+    flex-shrink: 0;
+    float: left;
+    img {
+      width: 100%;
+    }
+  }
+  .content__top {
+    align-items: center;
+  }
+
+  .content__list {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .planeta_zemlia {
+    img {
+      width: 100%;
+    }
+  }
+}
