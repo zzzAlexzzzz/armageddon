@@ -1,8 +1,9 @@
 import React from "react";
-import "./Cart.scss";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import { clearItem } from "../../Redux/Slice/CartSlice";
+
+import "./Cart.scss";
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export const Cart = () => {
   };
 
   return (
-    <div>
+    <>
       <h2>Заказ отправлен!</h2>
 
       {items.map((item: any) => (
@@ -26,6 +27,6 @@ export const Cart = () => {
           <h2>Уничтожить все</h2>
         </button>
       </div>
-    </div>
+    </>
   );
 };

@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import Home from "./components/Home/Home";
-import "./Libs/App.scss";
 import { Cart } from "./components/Cart/Cart";
+
+import "./Libs/App.scss";
 
 function App() {
   return (

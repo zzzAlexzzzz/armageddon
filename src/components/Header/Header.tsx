@@ -1,10 +1,11 @@
 import React from "react";
-import "./Header.scss";
 import { Link } from "react-router-dom";
+
+import "./Header.scss";
 
 export const Header: React.FC = () => {
   return (
-    <div>
+    <>
       <Link to="/">
         <div className="header">
           <div className="container">
@@ -16,6 +17,6 @@ export const Header: React.FC = () => {
           </div>
         </div>
       </Link>
-    </div>
+    </>
   );
 };

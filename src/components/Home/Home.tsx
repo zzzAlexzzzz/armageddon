@@ -1,10 +1,11 @@
 import React from "react";
-import "./Home.scss";
 import planeta from "../../asets/img/planetaZemliaKosmos 1.png";
 import { Asteroids } from "../Asteroids/Asteroids";
 import { CartBlock } from "../CartBlock/CartBlock";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+import "./Home.scss";
 
 const src = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-09-01&end_date=2023-09-01&api_key=VrfULl1k8H3g4oPHMPAcJ8mKBCa25c4xAbMqqICI`;
 
@@ -18,7 +19,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <div className="content">
         <div className="container">
           <div className="planeta_zemlia">
@@ -52,7 +53,7 @@ const Home = () => {
           <CartBlock />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

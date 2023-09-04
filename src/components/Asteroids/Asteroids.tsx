@@ -1,8 +1,9 @@
 import React from "react";
 import asteroid from "../../asets/img/pngegg 1.png";
-import "./Asteroids.scss";
 import { useDispatch } from "react-redux";
 import { addAsteroid } from "../../Redux/Slice/CartSlice";
+
+import "./Asteroids.scss";
 
 interface AsteroidsProps {
   id: number;
@@ -36,7 +37,7 @@ export const Asteroids = ({
   };
 
   return (
-    <div>
+    <>
       <div className="content__list__asteroids">
         <h2>{dateFull}</h2>
         <div className="content__asteroid">
@@ -73,6 +74,6 @@ export const Asteroids = ({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
