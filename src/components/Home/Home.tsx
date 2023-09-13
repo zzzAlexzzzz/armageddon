@@ -44,15 +44,21 @@ const Home = () => {
                 <span className="content__distance-moon">в лунных орбитах</span>
               </div>
             </div>
-            {items[0].map((item: any) => (
+            {items.map((item: any) => (
               <Asteroids
                 key={item}
-                id={item.id}
-                name={item.name}
-                distance={item.close_approach_data[0].miss_distance.kilometers}
-                diameter={item.estimated_diameter.meters.estimated_diameter_min}
-                dangerous={item.is_potentially_hazardous_asteroid}
-                dateFull={item.close_approach_data[0].close_approach_date_full}
+                id={item[0].id}
+                name={item[0].name}
+                distance={
+                  item[0].close_approach_data[0].miss_distance.kilometers
+                }
+                diameter={
+                  item[0].estimated_diameter.meters.estimated_diameter_min
+                }
+                dangerous={item[0].is_potentially_hazardous_asteroid}
+                dateFull={
+                  item[0].close_approach_data[0].close_approach_date_full
+                }
               />
             ))}
           </div>
