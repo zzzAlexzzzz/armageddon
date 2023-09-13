@@ -1,22 +1,32 @@
-import React from "react";
 import planeta from "../../asets/img/planetaZemliaKosmos 1.png";
 import { Asteroids } from "../Asteroids/Asteroids";
 import { CartBlock } from "../CartBlock/CartBlock";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAsteroid } from "../../Redux/Slice/AsteroidSlice";
 
 import "./Home.scss";
 
-const src = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-09-01&end_date=2023-09-01&api_key=VrfULl1k8H3g4oPHMPAcJ8mKBCa25c4xAbMqqICI`;
+// const src = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-09-23&end_date=2023-09-23&api_key=VrfULl1k8H3g4oPHMPAcJ8mKBCa25c4xAbMqqICI`;
 
 const Home = () => {
-  const [item, setItem] = useState<any>([]);
+  const dispatch = useDispatch();
+  const items = useSelector((state: any) => state.asteroid.items);
 
   useEffect(() => {
-    axios.get(src).then((data) => {
-      setItem(data.data.near_earth_objects["2023-09-01"]);
-    });
-  }, []);
+    dispatch<any>(fetchAsteroid());
+  }, [dispatch]);
+
+  // const [item, setItem] = useState<any>([]);
+
+  // useEffect(() => {
+  //   axios.get(src).then((data) => {
+  //     setItem(data.data.near_earth_objects["2023-09-13"]);
+  //   });
+  // }, []);
+
+  console.log(items);
 
   return (
     <>
@@ -34,21 +44,17 @@ const Home = () => {
                 <span className="content__distance-moon">в лунных орбитах</span>
               </div>
             </div>
-            {item.map((obj: any) => {
-              return (
-                <Asteroids
-                  key={obj.id}
-                  id={obj.id}
-                  dateFull={obj.close_approach_data[0].close_approach_date_full}
-                  name={obj.name}
-                  distance={obj.close_approach_data[0].miss_distance.kilometers}
-                  diameter={
-                    obj.estimated_diameter.meters.estimated_diameter_min
-                  }
-                  dangerous={obj.is_potentially_hazardous_asteroid}
-                />
-              );
-            })}
+            {items[0].map((item: any) => (
+              <Asteroids
+                key={item}
+                id={item.id}
+                name={item.name}
+                distance={item.close_approach_data[0].miss_distance.kilometers}
+                diameter={item.estimated_diameter.meters.estimated_diameter_min}
+                dangerous={item.is_potentially_hazardous_asteroid}
+                dateFull={item.close_approach_data[0].close_approach_date_full}
+              />
+            ))}
           </div>
           <CartBlock />
         </div>

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cart from "./Slice/CartSlice";
+import asteroid from "./Slice/AsteroidSlice";
 
 export const store = configureStore({
   reducer: {
     cart,
+    asteroid,
   },
 });
 
